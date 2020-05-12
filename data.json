@@ -1,0 +1,50 @@
+{
+    "students": [
+        {
+            "studentId": 1,
+            "studentName": "A",
+            "age": 19,
+            "pets": [
+                {
+                    "petName": "Rooney_A",
+                    "petType": "dog"
+                },
+                {
+                    "petName": "Minny_A",
+                    "petType": "cat"
+                }
+            ]
+        },
+        {
+            "studentId": 2,
+            "studentName": "B",
+            "age": 17,
+            "pets": [
+                {
+                    "petName": "Lulu_B",
+                    "petType": "dog"
+                }
+            ]
+        },
+        {
+            "studentId": 3,
+            "studentName": "C",
+            "age": 20,
+            "pets": [
+                {
+                    "petName": "MuSu_C",
+                    "petType": "dog"
+                },
+                {
+                    "petName": "Boot_C",
+                    "petType": "cat"
+                }
+            ]
+        }
+    ],
+    "imageOfStudent": [
+        {"studentId": 1, "imgPath": "public/img/student1.jpg"},
+        {"studentId": 2, "imgPath": "public/img/student2.jpg"},
+        {"studentId": 3, "imgPath": "public/img/student3.jpg"}
+    ]
+}
