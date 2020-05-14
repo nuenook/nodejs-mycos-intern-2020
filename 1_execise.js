@@ -79,18 +79,39 @@ imageOfStudent = data.students.map(element =>{
   * convert petType to 0 is dog and 1 is cat
   * result is the same data.json file but add petType object and change student's petType
   */
-addPetType = AllPet.map(pet =>{
-  return {petName:pet.petName, petTypeId: pet.petType === 'dog'? 0 : 1, petTypeName: pet.petType}
-});
-console.log(addPetType);
+// addPetType = AllPet.map(pet =>{
+//   return {petName:pet.petName, petTypeId: pet.petType === 'dog'? 0 : 1, petTypeName: pet.petType}
+// });
+// console.log(addPetType);
+const newData = {
+  students: data.students.map(element =>{
+    return {
+      studentId: element.studentId,
+      studentName: element.studentName,
+      pets: element.pets.map(petElement =>{
+        return {
+          petName: petElement.petName, 
+          petTypeID: petElement.petType === 'dog'? 0 : 1, 
+          petTypeName: petElement.petType}
+      }),
+    }
+  }),
+  imageOfStudent: data.imageOfStudent
+}
+console.log(newData);
 /*
-[
-  { petName: 'Rooney_A', petTypeId: 0, petTypeName: 'dog' },
-  { petName: 'Minny_A', petTypeId: 1, petTypeName: 'cat' },
-  { petName: 'Lulu_B', petTypeId: 0, petTypeName: 'dog' },
-  { petName: 'MuSu_C', petTypeId: 0, petTypeName: 'dog' },
-  { petName: 'Boot_C', petTypeId: 1, petTypeName: 'cat' }
-]
+{
+  students: [
+    { studentId: 1, studentName: 'A', pets: [Array] },
+    { studentId: 2, studentName: 'B', pets: [Array] },
+    { studentId: 3, studentName: 'C', pets: [Array] }
+  ],
+  imageOfStudent: [
+    { studentId: 1, imgPath: 'public/img/student1.jpg' },
+    { studentId: 2, imgPath: 'public/img/student2.jpg' },
+    { studentId: 3, imgPath: 'public/img/student3.jpg' }
+  ]
+}
 */
 
 /**
