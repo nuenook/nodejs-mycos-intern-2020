@@ -79,10 +79,6 @@ imageOfStudent = data.students.map(element =>{
   * convert petType to 0 is dog and 1 is cat
   * result is the same data.json file but add petType object and change student's petType
   */
-// addPetType = AllPet.map(pet =>{
-//   return {petName:pet.petName, petTypeId: pet.petType === 'dog'? 0 : 1, petTypeName: pet.petType}
-// });
-// console.log(addPetType);
 const newData = {
   students: data.students.map(element =>{
     return {
@@ -91,12 +87,16 @@ const newData = {
       pets: element.pets.map(petElement =>{
         return {
           petName: petElement.petName, 
-          petTypeID: petElement.petType === 'dog'? 0 : 1, 
-          petTypeName: petElement.petType}
-      }),
+          petTypeID: petElement.petType === 'dog'? 0 : 1
+        }
+     })
     }
   }),
-  imageOfStudent: data.imageOfStudent
+  imageOfStudent: data.imageOfStudent,
+  petTypes: [
+    {petTypeId: 0, petTypeName: "dog"},
+    {petTypeId: 1, petTypeName: "cat"}
+  ]
 }
 console.log(newData);
 /*
