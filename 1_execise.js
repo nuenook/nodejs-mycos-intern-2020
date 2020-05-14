@@ -48,7 +48,7 @@ console.log(imgStd)
  */
 console.log("-----------------------------")
  const addPetType = data.students.map(All=>{
-    let petTypeOb = {"petTypeId":0,"petTypeName":"dog","petTypeId":1,"petTypeName":"cat",} 
+   
    
     console.log({...All})
     console.log("--------------------------------------------------------")
