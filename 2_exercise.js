@@ -23,8 +23,14 @@ const printC = async () => {
 /**
  * Print by following A B C C A
  */
-const PrintABCCA = async () => {}
-
+const PrintABCCA = async () => {
+    await printA();
+    await printB();
+    await printC();
+    await printC();
+    await printA();
+}
+// PrintABCCA();
 
 /**
  * Print by starting with B
@@ -35,13 +41,10 @@ const PrintABCCA = async () => {}
  */
 const PrintBAAAB = async () => {
     console.time("Ten seconds");
-
-
-
-
+    await Promise.all([printB(), printA(), printA(), printB()]);
     console.timeEnd("Ten seconds");
 }
-
+// PrintBAAAB();
 
 /**
  * Challenge accepted
@@ -49,8 +52,8 @@ const PrintBAAAB = async () => {
  */
 const PrintABCIn3Second = async () => {
     console.time("three seconds");
-
+    await Promise.all([printA(), printB(), printC()]);
     console.timeEnd("three seconds");
 }
-
+ 
 PrintABCIn3Second()
