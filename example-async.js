@@ -34,8 +34,7 @@ const random = () => Math.floor((Math.random() * 3) +
 
   const main = async () => {
     const stu = [1,2,3]
-    console.time("Time this");
-    console.log("start")
+    
     await connectToDatabase()
 
     const stuPromise = stu.map(s => {
@@ -46,7 +45,9 @@ const random = () => Math.floor((Math.random() * 3) +
     })
 
     await Promise.all(stuPromise)
-    
+    console.time("Time this");
+    console.log("start")
+    await Promise.all([await getStudent(1),await updateStudent(1),await getStudent(2),await updateStudent(2)])
     console.log("end")
     console.timeEnd("Time this");
   }
