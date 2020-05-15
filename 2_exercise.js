@@ -23,7 +23,10 @@ const printC = async () => {
 /**
  * Print by following A B C C A
  */
-const PrintABCCA = async () => {}
+const PrintABCCA = async () => {
+    await Promise.all(printA(),printB(),printC(),printC(),printA())
+
+}
 
 
 /**
@@ -35,10 +38,7 @@ const PrintABCCA = async () => {}
  */
 const PrintBAAAB = async () => {
     console.time("Ten seconds");
-
-
-
-
+    await Promise.all(printB(),printA(),printA(),printA(),printB())
     console.timeEnd("Ten seconds");
 }
 
@@ -49,7 +49,7 @@ const PrintBAAAB = async () => {
  */
 const PrintABCIn3Second = async () => {
     console.time("three seconds");
-
+    await Promise.all(printA(),printB(),printC())
     console.timeEnd("three seconds");
 }
 
