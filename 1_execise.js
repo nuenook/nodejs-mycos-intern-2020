@@ -49,7 +49,8 @@ console.log(studentpet)
   * result is the same data.json file but add petType object and change student's petType
   */
 const Type = getAllpet.map( pet => {
-  for(i=0 ; i < pet.length; i++){
+  const recursive = (i) =>{
+  // for(i=0 ; i < pet.length; i++){
     switch (pet[i].petType){
       case 'cat': pet[i].petType = "0" 
         break
@@ -57,7 +58,12 @@ const Type = getAllpet.map( pet => {
         break
       default: break
     }
+    i += 1
+    if (i < pet.length){
+      recursive(i)
+    }
   }
+  recursive(0)
 return pet
 })
 console.log("petType to 0 is dog and 1 is cat")
